@@ -18,6 +18,7 @@ gaussian_noise_prob: 0.5
 noise_range: [1, 30]
 poisson_scale_range: [0.05, 3]
 gray_noise_prob: 0.4
+jpeg_compress: false
 jpeg_range: [30, 95]
 
 # the second degradation process
@@ -28,6 +29,7 @@ gaussian_noise_prob2: 0.5
 noise_range2: [1, 25]
 poisson_scale_range2: [0.05, 2.5]
 gray_noise_prob2: 0.4
+jpeg_compress: false
 jpeg_range2: [30, 95]
 
 gt_size: 256
@@ -108,9 +110,12 @@ network_d:
 # path
 path:
   # use the pre-trained Real-ESRNet model
-  pretrain_network_g: experiments/pretrained_models/Real_HAT_x4.pth # train the MSE-based model 'Real_HAT' first.
+  pretrain_network_g: experiments/pretrained_models/Real_HAT_GAN_SRx4.pth
   param_key_g: params_ema
   strict_load_g: true
+  pretrain_network_d: experiments/pretrained_models/RealESRGAN_x4plus_netD.pth
+  param_key_d: params
+  strict_load_d: true
   resume_state: ~
 
 # training settings
