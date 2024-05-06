@@ -99,7 +99,7 @@ class HATGANer():
           
         # pad to multiplication of window_size
         window_size = 16
-        self.scale = self.model.scale
+        self.scale = 4
         self.mod_pad_h, self.mod_pad_w = 0, 0
         _, _, h, w = self.lq.size()
         if h % window_size != 0:
