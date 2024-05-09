@@ -145,7 +145,7 @@ class RealHATGANModel(SRGANModel):
             #   1. [resize back + sinc filter] + JPEG compression
             #   2. JPEG compression + [resize back + sinc filter]
             # Empirically, we find other combinations (sinc + JPEG + Resize) will introduce twisted lines.
-            if np.random.uniform() < True:
+            if True:
                 
                 # resize back + the final sinc filter
                 mode = random.choice(['area', 'bilinear', 'bicubic'])
